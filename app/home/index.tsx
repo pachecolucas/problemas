@@ -18,7 +18,7 @@ function ComponenteGrupo({ grupo }: { grupo: Grupo }) {
   return (
     <div className="flex-1 flex flex-col gap-4 p-4 py-4" style={{ background: grupo.cores.forte }}>
       <div className="text-center" style={{ color: grupo.cores.claro }}>
-        <div className="text-6xl">{grupo.icone}</div>
+        <div className="text-6xl mb-1">{grupo.icone}</div>
         <h1 className="uppercase font-black text-xl">{grupo.nome}</h1>
         <p>{grupo.descricao}</p>
       </div>

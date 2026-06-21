@@ -5,7 +5,7 @@ export const grupos: Grupo[] = [
     icone: "👽",
     letra: "A",
     nome: "Grupo A",
-    descricao: "Vistos como esquisitos ou excêntricos",
+    descricao: "Os esquisitos",
     transtornos: [
       {
         icone: "🕵️",
@@ -87,7 +87,7 @@ export const grupos: Grupo[] = [
     icone: "☢️",
     letra: "B",
     nome: "Grupo B",
-    descricao: "Vistos como dramáticos, emotivos ou erráticos",
+    descricao: "Os machucadores",
     transtornos: [
       {
         icone: "😈",
@@ -195,7 +195,7 @@ export const grupos: Grupo[] = [
     icone: "💔",
     letra: "C",
     nome: "Grupo C",
-    descricao: "Vistos como ansiosos ou medrosos",
+    descricao: "Os machucados",
     transtornos: [
       {
         icone: "🫣",
