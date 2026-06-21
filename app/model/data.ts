@@ -1,31 +1,15 @@
-export type Transtorno = {
-  /** Nome do transtorno de personalidade */
-  nome: string;
-  /** Resumo da característica central */
-  descricao: string;
-  /** Número mínimo de critérios exigidos para o diagnóstico */
-  minimoCriterios: number;
-  /** Lista de critérios diagnósticos (parafraseados) */
-  criterios: string[];
-  /** Mantido como entidade distinta no modelo alternativo do DSM-5 */
-  modeloAlternativo: boolean;
-};
-
-export type Grupo = {
-  /** Identificação do grupo (cluster) */
-  nome: string;
-  /** Descrição/percepção geral do grupo */
-  descricao: string;
-  /** Transtornos pertencentes ao grupo */
-  transtornos: Transtorno[];
-};
+import { Grupo } from ".";
 
 export const grupos: Grupo[] = [
   {
+    icone: "👽",
+    letra: "A",
     nome: "Grupo A",
     descricao: "Vistos como esquisitos ou excêntricos",
     transtornos: [
       {
+        icone: "🕵️",
+        sigla: "TPPA",
         nome: "Paranoide",
         descricao: "Desconfiança e suspeita pervasivas em relação aos outros, cujas motivações são interpretadas como malévolas.",
         minimoCriterios: 4,
@@ -39,8 +23,15 @@ export const grupos: Grupo[] = [
           "Percebe ataques a seu caráter ou reputação não evidentes aos outros e reage com raiva ou contra-ataque.",
           "Suspeitas recorrentes e injustificadas quanto à fidelidade do cônjuge ou parceiro sexual.",
         ],
+        signo: {
+          icone: "♏",
+          nome: "Escorpião",
+          descricao: "Desconfiança, ciúme, suspeita, guardar rancor",
+        },
       },
       {
+        icone: "👤",
+        sigla: "TPE",
         nome: "Esquizoide",
         descricao: "Distanciamento das relações sociais e faixa restrita de expressão emocional em contextos interpessoais.",
         minimoCriterios: 4,
@@ -54,8 +45,15 @@ export const grupos: Grupo[] = [
           "Mostra-se indiferente a elogios ou críticas dos outros.",
           "Demonstra frieza emocional, distanciamento ou afetividade embotada.",
         ],
+        signo: {
+          icone: "♒",
+          nome: "Aquário",
+          descricao: 'Distância emocional, frieza, alienação, o "estranho que observa de longe"',
+        },
       },
       {
+        icone: "🛸",
+        sigla: "TPET",
         nome: "Esquizotípica",
         descricao: "Desconforto agudo nas relações íntimas, distorções cognitivas ou perceptivas e excentricidades de comportamento.",
         minimoCriterios: 5,
@@ -71,14 +69,29 @@ export const grupos: Grupo[] = [
           "Ausência de amigos próximos ou confidentes, além de parentes de primeiro grau.",
           "Ansiedade social excessiva que não diminui com a familiaridade e está associada a temores paranoides, e não a julgamentos negativos sobre si.",
         ],
+        signo: {
+          icone: "♓",
+          nome: "Peixes",
+          descricao: "Dissolução de limites, fantasia, pensamento mágico, percepção fora do consensual",
+        },
       },
     ],
+    cores: {
+      escuro: "#5B21B6",
+      forte: "#7C3AED",
+      medio: "#A78BFA",
+      claro: "#F5F3FF",
+    },
   },
   {
+    icone: "☢️",
+    letra: "B",
     nome: "Grupo B",
     descricao: "Vistos como dramáticos, emotivos ou erráticos",
     transtornos: [
       {
+        icone: "😈",
+        sigla: "TPAS",
         nome: "Antissocial",
         descricao: "Desrespeito e violação dos direitos dos outros, presentes desde os 15 anos de idade.",
         minimoCriterios: 3,
@@ -93,8 +106,15 @@ export const grupos: Grupo[] = [
           "Ausência de remorso, com indiferença ou racionalização após ferir, maltratar ou roubar.",
           "Requisitos adicionais: idade mínima de 18 anos e evidência de transtorno da conduta antes dos 15 anos.",
         ],
+        signo: {
+          icone: "",
+          nome: "",
+          descricao: "",
+        },
       },
       {
+        icone: "🎢",
+        sigla: "TPB",
         nome: "Borderline",
         descricao: "Instabilidade nas relações interpessoais, na autoimagem e nos afetos, com impulsividade acentuada.",
         minimoCriterios: 5,
@@ -110,8 +130,15 @@ export const grupos: Grupo[] = [
           "Raiva intensa e inadequada, ou dificuldade em controlá-la.",
           "Ideação paranoide transitória relacionada ao estresse, ou sintomas dissociativos graves.",
         ],
+        signo: {
+          icone: "♈",
+          nome: "Áries",
+          descricao: "Ciclo de impulso e arrependimento que isola",
+        },
       },
       {
+        icone: "🎭",
+        sigla: "TPH",
         nome: "Histriônica",
         descricao: "Emocionalidade e busca de atenção em excesso.",
         minimoCriterios: 5,
@@ -126,8 +153,15 @@ export const grupos: Grupo[] = [
           "Sugestionabilidade: facilmente influenciado pelos outros ou pelas circunstâncias.",
           "Considera os relacionamentos mais íntimos do que realmente são.",
         ],
+        signo: {
+          icone: "♊",
+          nome: "Gêmeos",
+          descricao: "Máscara cambiante, charme, superficialidade, precisar de plateia",
+        },
       },
       {
+        icone: "👑",
+        sigla: "TPN",
         nome: "Narcisista",
         descricao: "Grandiosidade, necessidade de admiração e falta de empatia.",
         minimoCriterios: 5,
@@ -143,14 +177,29 @@ export const grupos: Grupo[] = [
           "Inveja frequente dos outros, ou crença de ser alvo da inveja deles.",
           "Comportamentos ou atitudes arrogantes e insolentes.",
         ],
+        signo: {
+          icone: "♌",
+          nome: "Leão",
+          descricao: 'Grandiosidade, "eu sou especial", sede de admiração — a sombra solar',
+        },
       },
     ],
+    cores: {
+      escuro: "#991B1B",
+      forte: "#DC2626",
+      medio: "#F87171",
+      claro: "#FEF2F2",
+    },
   },
   {
+    icone: "💔",
+    letra: "C",
     nome: "Grupo C",
     descricao: "Vistos como ansiosos ou medrosos",
     transtornos: [
       {
+        icone: "🫣",
+        sigla: "TPES",
         nome: "Evitativa",
         descricao: "Inibição social, sentimentos de inadequação e hipersensibilidade à avaliação negativa.",
         minimoCriterios: 4,
@@ -164,8 +213,15 @@ export const grupos: Grupo[] = [
           "Vê a si mesmo como socialmente inepto, sem atrativos pessoais ou inferior aos outros.",
           "Relutância incomum em assumir riscos pessoais ou novas atividades por medo de passar vergonha.",
         ],
+        signo: {
+          icone: "♋",
+          nome: "Câncer",
+          descricao: "Sensível à rejeição e pode evitar pessoas após experiências dolorosas",
+        },
       },
       {
+        icone: "🫂",
+        sigla: "TPD",
         nome: "Dependente",
         descricao: "Comportamento submisso e apegado, ligado a uma necessidade excessiva de ser cuidado.",
         minimoCriterios: 5,
@@ -180,8 +236,15 @@ export const grupos: Grupo[] = [
           "Busca com urgência outro relacionamento como fonte de cuidado e amparo quando um termina.",
           "Preocupação irreal com o temor de ser deixado para cuidar de si mesmo.",
         ],
+        signo: {
+          icone: "♎",
+          nome: "Libra",
+          descricao: '"Só existo no outro": não decide sozinho, evita discordar, busca o par',
+        },
       },
       {
+        icone: "☑️",
+        sigla: "TPOC",
         nome: "Obsessivo-compulsivo",
         descricao: "Preocupação com ordem, perfeccionismo e controle, à custa de flexibilidade, abertura e eficiência.",
         minimoCriterios: 4,
@@ -196,9 +259,18 @@ export const grupos: Grupo[] = [
           "Estilo avarento de gastar, com dinheiro visto como algo a ser acumulado para catástrofes futuras.",
           "Rigidez e teimosia.",
         ],
+        signo: {
+          icone: "♍",
+          nome: "Virgem",
+          descricao: "Perfeccionismo, ordem, controle, crítica — o match mais óbvio da lista",
+        },
       },
     ],
+    cores: {
+      escuro: "#9A3412",
+      forte: "#EA580C",
+      medio: "#FB923C",
+      claro: "#FFF7ED",
+    },
   },
 ];
-
-export default grupos;
